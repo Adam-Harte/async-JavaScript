@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="app.js"></script>
+		<title>Async JavaScript</title>
+	</head>
+	<body>
+		<h1>Async JavaScript</h1>
+		<h3>Synchronous Code</h3>
+		<p>
+			JavaScript is single-threaded meaning that only one task/piece of code can
+			be exectured at a time due to their only being one thread available to run
+			the exection. This means JavaScript code runs from top to bottom line by
+			line and step by step.
+		</p>
+		<h3>Asynchronous Code</h3>
+		<p>
+			Sometimes we have certain operations in our code that takes longer such as
+			timers and HTTP requests. Now we wouldnt want these lengthy operations to
+			execute and block the main thread as then the rest of our synchronous code
+			cannot run until the operation is complete. To deal with these lengthy
+			operations we can send them off to the browser which uses multiple threads
+			to deal with such as browser APIs for timers like setTimeout and
+			setInterval, event listeners or HTTP requests with fetch. These browser
+			APIs typically take a callback fuction that is called later on in the
+			single threaded synchronous JavaScript once the lenghty operarion has
+			completed.
+		</p>
+		<h3>Event Loop</h3>
+		<p>
+			The event loop is used in browsers to manage asynchronous code and
+			callbacks. For example say we use a setTimeout that setTimeout will
+			execute immediately as a browser API the browser will handle the setting
+			of this timer and then add the callback to what is known as the message
+			queue. Then after your setTimeout the rest of the synchronous code carries
+			on running as normal, After the timer has finished the browser event loop
+			will look for a time when the call stack is empty to then go ahead and add
+			that queued message being our callback to the stack to then be executed as
+			part of synchronous code. The event loop is what snchronises the message
+			queue witht the call stack. The event loop is always running checking for
+			if the call stack is empty and if it is adds any messages queued that need
+			to be added to the stack.
+		</p>
+	</body>
+</html>
