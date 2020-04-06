@@ -43,5 +43,19 @@
 			if the call stack is empty and if it is adds any messages queued that need
 			to be added to the stack.
 		</p>
+		<h3>Promises</h3>
+		<p>
+			Promises allow us to handle our asyncchronous code/callbacks in a more
+			synchronous looking way and helps us avoid the confusion of 'callback
+			hell' when we have multiple nested callbacks that can be hard to follow.
+			Promises allow us to chain callback executions together with ''.then'
+			following on from the previous calls return and therefore keep the code on
+			one nested level instead of possible multi nested levels when there is
+			multiple callbacks. Promises are an object that takes a function as an
+			argument with that function containing two more functions being a resolve
+			and reject function and can be created with the 'new Promise()'' syntax.
+			The '.then' chaining on a promise begins after resolve has executed and a
+			promise can resolve multiple times hence multiple '.then' chaining.
+		</p>
 	</body>
 </html>
