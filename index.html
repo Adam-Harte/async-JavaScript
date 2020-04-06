@@ -68,5 +68,30 @@
 			multiple '.then' anything you return gets wrapped in a promise and sets
 			the promise from resolved back to pending.
 		</p>
+		<h3>Promise Error Handling</h3>
+		<p>
+			Promises take a function as an argument which in turn takes a resolve and
+			a reject function as arguments. The reject function is used for error
+			handling when the promise isnt fulfilled and resolved. When creating our
+			promises we wrap the error state with the reject function call and pass in
+			any error related data to it. Then when it comes to using the promise and
+			chaining it we can handle the error we get from reject by passing a second
+			argument to '.then' which is our reject error handling for that '.then'
+			case or we can chain '.catch'. '.catch' does exactly the same as the
+			second argument to '.then' does but instead you just chain it after the
+			'.then' instead of adding it as a second argument. The '.catch' catches
+			all errors thrown from any previousy defined '.then' above it in the
+			promise chain. Promise chains continue after '.catch' so using it does not
+			cancel or stop the promise from continuing.
+		</p>
+		<h3>Finally</h3>
+		<p>
+			There is a third chain method we can add to promises and thats the
+			'.finally' method. This method is used at the end of a promise fo cleanup.
+			Promises have 4 possible states which are PENDING, RESOLVED, REJECTED and
+			SETTLED. '.then' and '.catch' cover the resolve and reject states and
+			finally covers the settled state which can only ever be reached once the
+			promise has finished all resolves or rejects.
+		</p>
 	</body>
 </html>

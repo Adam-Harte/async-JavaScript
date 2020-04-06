@@ -24,7 +24,9 @@ const getPosition = (options) => {
 			(success) => {
 				resolve(success);
 			},
-			(error) => {}
+			(error) => {
+				reject(error);
+			}
 		);
 	});
 
@@ -38,4 +40,8 @@ getPosition()
 	})
 	.then((data) => {
 		console.log(data);
+	})
+	//promise error handling
+	.catch((error) => {
+		console.log(error);
 	});
