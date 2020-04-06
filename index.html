@@ -57,5 +57,16 @@
 			The '.then' chaining on a promise begins after resolve has executed and a
 			promise can resolve multiple times hence multiple '.then' chaining.
 		</p>
+		<h3>Chaining Multiple Promises</h3>
+		<p>
+			Promises can be chained with multiple '.then' by simply adding a return in
+			the previous '.then' block. Doing this sets the promise from resolved back
+			to pending as it automatically wraps a new promise on the return from the
+			previous then. Your next then can then get the data from that previous
+			return as a parameter in the callback of '.then' and the chain can keep
+			continuing like this. Note that you dont have to return a promise to chain
+			multiple '.then' anything you return gets wrapped in a promise and sets
+			the promise from resolved back to pending.
+		</p>
 	</body>
 </html>

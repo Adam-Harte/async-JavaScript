@@ -16,3 +16,26 @@ setTimer(2000).then(() => {
 setTimer(5000).then((data) => {
 	console.log(data);
 });
+
+// chaining multiple promises
+const getPosition = (options) => {
+	const promise = new Promise((resolve, reject) => {
+		navigator.geolocation.getCurrentPosition(
+			(success) => {
+				resolve(success);
+			},
+			(error) => {}
+		);
+	});
+
+	return promise;
+};
+
+getPosition()
+	.then((posData) => {
+		console.log(posData);
+		return setTimer(2000);
+	})
+	.then((data) => {
+		console.log(data);
+	});
