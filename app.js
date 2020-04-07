@@ -45,3 +45,16 @@ getPosition()
 	.catch((error) => {
 		console.log(error);
 	});
+
+// promise race, all, allSettled
+Promise.race([getPosition(), getTimer(1000)]).then((data) => {
+	console.log(data);
+});
+
+Promise.all([getPosition(), getTimer(1000)]).then((data) => {
+	console.log(data);
+});
+
+Promise.allSettled([getPosition(), getTimer(1000)]).then((data) => {
+	console.log(data);
+});

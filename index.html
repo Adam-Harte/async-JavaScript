@@ -93,5 +93,31 @@
 			finally covers the settled state which can only ever be reached once the
 			promise has finished all resolves or rejects.
 		</p>
+		<h3>Promise Race, Promise All, Promise All Settled</h3>
+		<p>
+			There are some other handy promise methods that let us deal with muiltiple
+			different promises being called together. The promise race method takes an
+			array of promises and returns a promise of the result of the fastest
+			finishing/resolving/rejecting promise in the array of promises so you can
+			then continue with chaining '.then' afterwards with that fastest promise.
+			Race is useful if you are interested in working with one promise that is
+			fastest of a list of promises. The promise all method allows us to work
+			with a list of promises only when they have all
+			finished/resolved/rejected. Here you also pass in an array of promises as
+			the argument and the result you get back will be a promise containng the
+			combined data of all the promises you passed into the all method. The
+			combined data comes back in array form in the order of promises you passed
+			into the array argument. Promise all relies on all promises you pass in to
+			finish and resolve, if any one of them rejects then the whole promise all
+			is cancelled and you will just get the reject error. Finally we also have
+			Promise allSettled method which again takes an array of promises. The
+			difference with this method is that it doesnt cancel when a promise
+			fails/rejects instead it waits till all promises are settled meaning until
+			all promises are either resolved or rejected and then returns that data in
+			an array matching the order of the promises in the argument array. So with
+			this method we get the 'all' method like behaviour but are guaranteed all
+			promise data back even if some promises reject we will just get back the
+			rejection error and data for that promise.
+		</p>
 	</body>
 </html>
