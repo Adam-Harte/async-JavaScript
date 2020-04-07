@@ -119,5 +119,23 @@
 			promise data back even if some promises reject we will just get back the
 			rejection error and data for that promise.
 		</p>
+		<h3>Async/Await</h3>
+		<p>
+			Async/await is a way for us to work with promises in a more synchronous
+			looking way and therefore async/await is indeed still using promises under
+			the hood. Async/await is used by defining an async function with the
+			'async' keyword to the function statment or declaration. Adding the
+			'async' keyword to the function automatically makes that function return a
+			promise. With that async function defined we then get access to another
+			keyword inside that function which is the 'await' keyword. We use the
+			await keyword in front of any promise which then returns us the return
+			data from that promise so therefore we can assign a vasriable to the
+			result of await and therfore avoid the need for '.then' chaining you
+			typically use with regular promises. Important to remember that
+			async/await is still promises under the hood and JavaScript doesnt change
+			the way they work when using async/await it is simply a way of making your
+			promises more synchronous looking syntactically and JavaScript transforms
+			this to work with promises and '.then' chainig etc. in the background.
+		</p>
 	</body>
 </html>

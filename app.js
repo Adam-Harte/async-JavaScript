@@ -58,3 +58,14 @@ Promise.all([getPosition(), getTimer(1000)]).then((data) => {
 Promise.allSettled([getPosition(), getTimer(1000)]).then((data) => {
 	console.log(data);
 });
+
+// async/await
+const trackUser = async () => {
+	const posData = await getPosition();
+	const timerData = await getTimer(1000);
+
+	console.log(posData);
+	console.log(timerData);
+};
+
+trackUser();
