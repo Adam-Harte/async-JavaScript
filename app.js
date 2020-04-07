@@ -61,8 +61,16 @@ Promise.allSettled([getPosition(), getTimer(1000)]).then((data) => {
 
 // async/await
 const trackUser = async () => {
-	const posData = await getPosition();
-	const timerData = await getTimer(1000);
+	let posData;
+	let timerData;
+
+	// asyn/await error handling
+	try {
+		posData = await getPosition();
+		timerData = await getTimer(1000);
+	} catch (error) {
+		console.log(error);
+	}
 
 	console.log(posData);
 	console.log(timerData);

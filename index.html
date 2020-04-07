@@ -137,5 +137,13 @@
 			promises more synchronous looking syntactically and JavaScript transforms
 			this to work with promises and '.then' chainig etc. in the background.
 		</p>
+		<h3>Async/Await Error Handling</h3>
+		<p>
+			One issue with async/await is that we lose chaining of '.then' and
+			'.catch' and therfore lose error handling with standard promises. To
+			handle errors in async/await we instead use try catch blocks as the
+			async/await code is more synchronous based we need a synchronous based
+			error handling which is try catch.
+		</p>
 	</body>
 </html>
